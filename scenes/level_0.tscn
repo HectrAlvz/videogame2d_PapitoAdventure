@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmkbn417glir5"]
+
+[ext_resource type="Texture2D" uid="uid://ch6r3as78e4tv" path="res://sprites/platform.png" id="1_0fgj6"]
+[ext_resource type="PackedScene" uid="uid://gc3bpekd4xqf" path="res://scenes/player.tscn" id="2_oaqru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pftbo"]
+size = Vector2(380, 30)
+
+[node name="Level0" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(248, 198)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+texture = ExtResource("1_0fgj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_pftbo")
+
+[node name="Player" parent="." instance=ExtResource("2_oaqru")]
+position = Vector2(118, 164)
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(687, 177)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+texture = ExtResource("1_0fgj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("RectangleShape2D_pftbo")
